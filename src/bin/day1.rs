@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 
 fn main() {
     let magic_number = 2020;
-    let filename = "src/input.txt";
+    let filename = "input/day1.txt";
     let file = File::open(filename).unwrap();
     let reader = BufReader::new(file);
 
