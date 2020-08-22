@@ -22,4 +22,21 @@ fn main() {
             }
         }
     }
+
+    'slower: for f_record in records.clone() {
+        for s_record in records.clone() {
+            for t_record in records.clone() {
+                if t_record + s_record + f_record == magic_number {
+                    println!(
+                        "{} * {} * {} = {}",
+                        f_record,
+                        s_record,
+                        t_record,
+                        f_record * s_record * t_record
+                    );
+                    break 'slower;
+                }
+            }
+        }
+    }
 }

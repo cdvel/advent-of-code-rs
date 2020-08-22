@@ -37,7 +37,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 
 e.g., 
 ```
-cargo run src/day1.rs
+cargo run --bin day1
 
 ```
 
