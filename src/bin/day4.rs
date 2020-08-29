@@ -23,20 +23,18 @@ fn read_entries(filename: &str) -> Vec<String> {
 }
 
 fn is_complete(data: &str) -> bool {
-    let mandatory = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-
-    for key in mandatory {
+    for key in vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]{
         if !data.contains(key) {
             return false;
         }
     }
-
     true
 }
 
 fn is_valid(fields: Vec<&str>) -> bool {
     let mut dict: HashMap<&str, &str> = HashMap::new();
     let mut keys: Vec<&str>;
+    let mut validity: bool = true;
 
     for field in fields {
         keys = field.split(":").collect();
@@ -44,69 +42,41 @@ fn is_valid(fields: Vec<&str>) -> bool {
     }
 
     for (key, val) in &dict {
-        let ret = match *key {
-            "byr" => is_num_in_range(val, 1920, 2002),
-            "iyr" => is_num_in_range(val, 2010, 2020),
-            "eyr" => is_num_in_range(val, 2020, 2030),
+        validity = match *key {
+            "byr" => in_range(val, 1920, 2002),
+            "iyr" => in_range(val, 2010, 2020),
+            "eyr" => in_range(val, 2020, 2030),
             "hgt" => is_height(val),
             "hcl" => is_hair(val),
             "ecl" => ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].contains(val),
-            "pid" => val.chars().count() == 9 && is_num_in_range(val, 0, 999999999),
+            "pid" => val.chars().count() == 9 && in_range(val, 0, 999999999),
             _ => true,
         };
 
-        if !ret {
-            return false;
+        if !validity {
+            break;
         }
     }
-
-    true
+    validity
 }
 
-fn is_num_in_range(num: &str, lower: i32, upper: i32) -> bool {
-    let val = num.parse::<i32>();
-    let x = match val {
+fn in_range(num: &str, lower: i32, upper: i32) -> bool {
+    return match num.parse::<i32>() {
         Ok(x) => (x >= lower && x <= upper),
         Err(ref _e) => false,
     };
-
-    return x;
 }
 
 fn is_height(hgt: &str) -> bool {
-    let size = hgt.chars().count();
-
-    return match size {
-        5 => {
-            let h = &hgt[..3];
-            let sys = &hgt[3..];
-            return sys == "cm" && is_num_in_range(h, 150, 193);
-        }
-        4 => {
-            let h = &hgt[..2];
-            let sys = &hgt[2..];
-            return sys == "in" && is_num_in_range(h, 59, 76);
-        }
+    return match hgt.chars().count(){
+        5 => return &hgt[3..] == "cm" && in_range(&hgt[..3], 150, 193),
+        4 => return &hgt[2..] == "in" && in_range(&hgt[..2], 59, 76),
         _ => false,
     };
 }
 
 fn is_hair(hcl: &str) -> bool {
-    let hash = &hcl[..1];
-    let alpha = &hcl[1..];
-
-    match hash == "#" {
-        false => {
-            return false;
-        }
-        _ => {}
-    };
-
-    if alpha.chars().count() != 6 || !alpha.chars().all(char::is_alphanumeric) {
-        return false;
-    }
-
-    true
+    return hcl[..1] == *"#" && hcl[1..].chars().count() == 6 && hcl[1..].chars().all(char::is_alphanumeric);
 }
 
 fn main() {
