@@ -23,7 +23,7 @@ fn read_entries(filename: &str) -> Vec<String> {
 }
 
 fn is_complete(data: &str) -> bool {
-    for key in vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]{
+    for key in vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"] {
         if !data.contains(key) {
             return false;
         }
@@ -68,7 +68,7 @@ fn in_range(num: &str, lower: i32, upper: i32) -> bool {
 }
 
 fn is_height(hgt: &str) -> bool {
-    return match hgt.chars().count(){
+    return match hgt.chars().count() {
         5 => return &hgt[3..] == "cm" && in_range(&hgt[..3], 150, 193),
         4 => return &hgt[2..] == "in" && in_range(&hgt[..2], 59, 76),
         _ => false,
@@ -76,7 +76,9 @@ fn is_height(hgt: &str) -> bool {
 }
 
 fn is_hair(hcl: &str) -> bool {
-    return hcl[..1] == *"#" && hcl[1..].chars().count() == 6 && hcl[1..].chars().all(char::is_alphanumeric);
+    return hcl[..1] == *"#"
+        && hcl[1..].chars().count() == 6
+        && hcl[1..].chars().all(char::is_alphanumeric);
 }
 
 fn main() {
