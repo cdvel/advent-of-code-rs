@@ -12,7 +12,7 @@ fn read_entries(filename: &str) -> Vec<String> {
     for (_index, line) in reader.lines().enumerate() {
         let line = line.unwrap();
 
-        if line == "" {
+        if line.is_empty() {
             entries.push(passport.trim().to_string());
             passport = String::new();
         } else {
@@ -23,7 +23,7 @@ fn read_entries(filename: &str) -> Vec<String> {
 }
 
 fn is_complete(data: &str) -> bool {
-    for key in vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"] {
+    for key in &["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"] {
         if !data.contains(key) {
             return false;
         }
@@ -37,7 +37,7 @@ fn is_valid(fields: Vec<&str>) -> bool {
     let mut validity: bool = true;
 
     for field in fields {
-        keys = field.split(":").collect();
+        keys = field.split(':').collect();
         dict.insert(keys[0], keys[1]);
     }
 
@@ -61,10 +61,10 @@ fn is_valid(fields: Vec<&str>) -> bool {
 }
 
 fn in_range(num: &str, lower: i32, upper: i32) -> bool {
-    return match num.parse::<i32>() {
+    match num.parse::<i32>() {
         Ok(x) => (x >= lower && x <= upper),
         Err(ref _e) => false,
-    };
+    }
 }
 
 fn is_height(hgt: &str) -> bool {
@@ -94,7 +94,7 @@ fn main() {
     println!("complete no. = {:?}", complete.len());
 
     for passport in complete {
-        let tmp: Vec<&str> = passport.split(" ").collect();
+        let tmp: Vec<&str> = passport.split(' ').collect();
         if is_valid(tmp) {
             valid.push(passport.clone());
         }
