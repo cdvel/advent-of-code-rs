@@ -11,7 +11,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 |[Day 3: Toboggan Trajectory](https://adventofcode.com/2020/day/3)          |[✓](src/bin/day3.rs)      |
 |[Day 4: Passport Processing](https://adventofcode.com/2020/day/4)          |[✓](src/bin/day4.rs)      |
 |[Day 5: Binary Boarding](https://adventofcode.com/2020/day/5)              |[✓](src/bin/day5.rs)      |
-|[Day 6: Custom Customs](https://adventofcode.com/2020/day/6)               |[ ](src/bin/day6.rs)      |
+|[Day 6: Custom Customs](https://adventofcode.com/2020/day/6)               |[◦](src/bin/day6.rs)      |
 |[Day 7: Handy Haversacks](https://adventofcode.com/2020/day/7)             |[ ](src/bin/day7.rs)      |
 |[Day 8: Handheld Halting](https://adventofcode.com/2020/day/8)             |[ ](src/bin/day8.rs)      |
 |[Day 9: Encoding Error](https://adventofcode.com/2020/day/9)               |[ ](src/bin/day9.rs)      |
