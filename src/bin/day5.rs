@@ -18,7 +18,7 @@ fn read_entries(filename: &str) -> Vec<String> {
 struct SeatRange {
     row: (i32, i32),
     col: (i32, i32),
-    id: i32,
+    _id: i32
 }
 
 fn search(mut seat: SeatRange, bit: char) -> SeatRange {
@@ -44,7 +44,7 @@ fn find_seat(partition: &str) -> i32 {
     let mut seat = SeatRange {
         row: (0, 127),
         col: (0, 7),
-        id: 0,
+        _id: 0,
     };
 
     for bit in bits {
