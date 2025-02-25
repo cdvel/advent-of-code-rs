@@ -14,8 +14,8 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 |[Day 4: Passport Processing](https://adventofcode.com/2020/day/4)          |[✓](src/bin/2020/day4.rs)      |
 |[Day 5: Binary Boarding](https://adventofcode.com/2020/day/5)              |[✓](src/bin/2020/day5.rs)      |
 |[Day 6: Custom Customs](https://adventofcode.com/2020/day/6)               |[◦](src/bin/2020/day6.rs)      |
-|[Day 7: Handy Haversacks](https://adventofcode.com/2020/day/7)             |[ ](src/bin/2020/day7.rs)      |
-|[Day 8: Handheld Halting](https://adventofcode.com/2020/day/8)             |[ ](src/bin/2020/day8.rs)      |
+|[Day 7: Handy Haversacks](https://adventofcode.com/2020/day/7)             |[✓](src/bin/2020/day7.rs)      |
+|[Day 8: Handheld Halting](https://adventofcode.com/2020/day/8)             |[✓](src/bin/2020/day8.rs)      |
 |[Day 9: Encoding Error](https://adventofcode.com/2020/day/9)               |[ ](src/bin/2020/day9.rs)      |
 |[Day 10: Adapter Array](https://adventofcode.com/2020/day/10)              |[ ](src/bin/2020/day10.rs)     |
 |[Day 11: Seating System](https://adventofcode.com/2020/day/11)             |[ ](src/bin/2020/day11.rs)     |
