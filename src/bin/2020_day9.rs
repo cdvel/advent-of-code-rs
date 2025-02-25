@@ -18,7 +18,22 @@ fn main() {
     let mut contiguous_set = Vec::new();
     let mut current_sum = 0;
 
+    for num in numbers {
+        contiguous_set.push(num);
+        current_sum += num;
 
+        while current_sum > invalid_number {
+            current_sum -= contiguous_set.remove(0);
+        }
+
+        if current_sum == invalid_number {
+            let min = contiguous_set.iter().min().unwrap();
+            let max = contiguous_set.iter().max().unwrap();
+            let sum = min + max;
+            println!("p2: The sum of the smallest and largest numbers in the contiguous set is {}", sum);
+            break;
+        }
+    }
     
 }
 
