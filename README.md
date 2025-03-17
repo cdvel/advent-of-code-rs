@@ -16,8 +16,8 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 |[Day 6: Custom Customs](https://adventofcode.com/2020/day/6)               |[◦](src/bin/2020_day6.rs)      |
 |[Day 7: Handy Haversacks](https://adventofcode.com/2020/day/7)             |[✓](src/bin/2020_day7.rs)      |
 |[Day 8: Handheld Halting](https://adventofcode.com/2020/day/8)             |[✓](src/bin/2020_day8.rs)      |
-|[Day 9: Encoding Error](https://adventofcode.com/2020/day/9)               |[ ](src/bin/2020_day9.rs)      |
-|[Day 10: Adapter Array](https://adventofcode.com/2020/day/10)              |[ ](src/bin/2020_day10.rs)     |
+|[Day 9: Encoding Error](https://adventofcode.com/2020/day/9)               |[✓](src/bin/2020_day9.rs)      |
+|[Day 10: Adapter Array](https://adventofcode.com/2020/day/10)              |[✓](src/bin/2020_day10.rs)     |
 |[Day 11: Seating System](https://adventofcode.com/2020/day/11)             |[ ](src/bin/2020_day11.rs)     |
 |[Day 12: Rain Risk](https://adventofcode.com/2020/day/12)                  |[ ](src/bin/2020_day12.rs)     |
 |[Day 13: Shuttle Search](https://adventofcode.com/2020/day/13)             |[ ](src/bin/2020_day13.rs)     |
@@ -36,7 +36,6 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 
 ## Run
 
-e.g., 
+e.g.,
 ```bash
 cargo run --bin 2020_day1
-
