@@ -62,7 +62,7 @@ fn is_valid(fields: Vec<&str>) -> bool {
 
 fn in_range(num: &str, lower: i32, upper: i32) -> bool {
     match num.parse::<i32>() {
-        Ok(x) => (x >= lower && x <= upper),
+        Ok(x) => x >= lower && x <= upper,
         Err(ref _e) => false,
     }
 }
